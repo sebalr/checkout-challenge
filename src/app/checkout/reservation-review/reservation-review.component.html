@@ -1,1 +1,7 @@
-<p>reservation-review works!</p>
+<mat-card>
+  <h4>Review trip details and adjust options if needed</h4>
+</mat-card>
+<mat-card>
+  <slr-listing-information [listingInformation]="listingInformation$ | async">
+  </slr-listing-information>
+</mat-card>

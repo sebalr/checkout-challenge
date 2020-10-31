@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ListingInformationDto } from 'src/app/shared/dtos/listing-information-dto';
 
 @Component({
   selector: 'slr-listing-information',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listing-information.component.scss']
 })
 export class ListingInformationComponent implements OnInit {
+  @Input() public listingInformation: ListingInformationDto;
 
   constructor() { }
 

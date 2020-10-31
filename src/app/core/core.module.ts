@@ -7,7 +7,7 @@ import { AngularMaterialModule } from 'src/app/shared/angular-material/angular-m
   declarations: [HeaderComponent],
   imports: [
     CommonModule,
-    AngularMaterialModule,
+    AngularMaterialModule
   ],
   exports: [HeaderComponent]
 })
