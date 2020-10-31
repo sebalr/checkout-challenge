@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+  },
+  {
+    path: 'checkout/:listingUuid',
+    loadChildren: () => import('./checkout/checkout.module').then(m => m.CheckoutModule)
   }
 ];
 
