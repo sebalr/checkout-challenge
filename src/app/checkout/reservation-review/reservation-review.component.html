@@ -1,5 +1,18 @@
 <mat-card>
-  <h4>Review trip details and adjust options if needed</h4>
+  <h3>Review trip details and adjust options if needed</h3>
+  <div class="dates d-flex">
+    From: <strong>2020-12-12</strong>
+    <mat-icon aria-hidden="false" aria-label="Example home icon">calendar_today</mat-icon>
+    To: <strong>2020-12-14</strong>
+  </div>
+  <label class="nights d-flex">11 nights</label>
+  <div class="guests d-flex">
+    <mat-icon aria-hidden="false" aria-label="Example home icon">person</mat-icon>
+    <label>&nbsp;2 guests</label>
+  </div>
+  <div class="total d-flex">
+    <label>$100</label>
+  </div>
 </mat-card>
 <mat-card>
   <slr-listing-information [listingInformation]="listingInformation$ | async">
