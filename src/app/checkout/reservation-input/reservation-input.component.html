@@ -1,0 +1,11 @@
+<form [formGroup]="reservationForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Enter a date range</mat-label>
+    <mat-date-range-input [rangePicker]="checkPicker">
+      <input matStartDate formControlName="checkin" placeholder="Checkin date">
+      <input matEndDate formControlName="checkout" placeholder="Checkout date">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="checkPicker"></mat-datepicker-toggle>
+    <mat-date-range-picker #checkPicker></mat-date-range-picker>
+  </mat-form-field>
+</form>

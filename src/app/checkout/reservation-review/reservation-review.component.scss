@@ -14,12 +14,12 @@ mat-card {
 
 strong {
   font-size: large;
+  margin-left: 1rem;
 }
 
 mat-divider {
-  width: 90%!important;
-  margin-top: 1rem;
-  margin-left: 5%;
+  position: initial!important;
+  margin: 1rem 0 1rem 0;
 }
 
 .dates {
