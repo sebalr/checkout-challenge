@@ -1,6 +1,6 @@
-<form [formGroup]="reservationForm">
+<div [formGroup]="reservationForm" class="form d-flex">
   <mat-form-field appearance="fill">
-    <mat-label>Enter a date range</mat-label>
+    <mat-label>Select reservation date</mat-label>
     <mat-date-range-input [rangePicker]="checkPicker">
       <input matStartDate formControlName="checkin" placeholder="Checkin date">
       <input matEndDate formControlName="checkout" placeholder="Checkout date">
@@ -8,4 +8,31 @@
     <mat-datepicker-toggle matSuffix [for]="checkPicker"></mat-datepicker-toggle>
     <mat-date-range-picker #checkPicker></mat-date-range-picker>
   </mat-form-field>
-</form>
+  <div class="d-flex mt-4">
+    <div class="d-flex stepper">
+      <button mat-icon-button (click)="adultStep(1)">
+        <mat-icon>add</mat-icon>
+      </button>
+      <mat-form-field class="fixed-input" appearance="fill">
+        <mat-label>Adults</mat-label>
+        <input type="number" matInput formControlName="adults">
+      </mat-form-field>
+      <button mat-icon-button (click)="adultStep(-1)">
+        <mat-icon>remove</mat-icon>
+      </button>
+    </div>
+    <mat-divider [vertical]="true"></mat-divider>
+    <div class="d-flex stepper">
+      <button mat-icon-button (click)="childrenStep(1)">
+        <mat-icon>add</mat-icon>
+      </button>
+      <mat-form-field class="fixed-input" appearance="fill">
+        <mat-label>Childrens</mat-label>
+        <input type="number" matInput formControlName="childrens">
+      </mat-form-field>
+      <button mat-icon-button (click)="childrenStep(-1)">
+        <mat-icon>remove</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

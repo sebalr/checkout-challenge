@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'slr-reservation-input',
@@ -10,7 +10,7 @@ export class ReservationInputComponent implements OnInit {
 
   public reservationForm: FormGroup;
 
-  constructor() {
+  constructor(private fb: FormBuilder) {
     this.initForm();
   }
 
@@ -18,11 +18,30 @@ export class ReservationInputComponent implements OnInit {
   }
 
   private initForm() {
-    this.reservationForm = new FormGroup({
-      checkin: new FormControl(),
-      checkout: new FormControl()
+    this.reservationForm = this.fb.group({
+      checkin: ['', [Validators.required]],
+      checkout: ['', [Validators.required]],
+      adults: [1, [Validators.required, Validators.min(1)]],
+      childrens: [0],
+      pets: [false]
+    });
+  }
+
+  // Add or remove adults from form input
+  public adultStep(step: number) {
+    const actualValue = this.reservationForm.controls.adults.value;
+    const newValue = actualValue + step;
+    if (newValue >= 0) {
+      this.reservationForm.controls.adults.setValue(newValue);
     }
-    );
+  }
+  // Add or remove childrens from form input
+  public childrenStep(step: number) {
+    const actualValue = this.reservationForm.controls.childrens.value;
+    const newValue = actualValue + step;
+    if (newValue >= 0) {
+      this.reservationForm.controls.childrens.setValue(newValue);
+    }
   }
 
 }
