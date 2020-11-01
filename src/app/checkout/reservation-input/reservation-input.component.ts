@@ -23,7 +23,7 @@ export class ReservationInputComponent implements OnInit {
       checkout: ['', [Validators.required]],
       adults: [1, [Validators.required, Validators.min(1)]],
       childrens: [0],
-      pets: [false]
+      pets: ["false", [Validators.required]]
     });
   }
 

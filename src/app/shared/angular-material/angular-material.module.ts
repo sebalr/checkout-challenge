@@ -10,12 +10,13 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     MatButtonModule,
+    MatButtonToggleModule,
     MatCardModule,
     MatDatepickerModule,
     MatDividerModule,
@@ -29,6 +30,7 @@ import { MatButtonModule } from '@angular/material/button';
   exports: [
     MatCardModule,
     MatButtonModule,
+    MatButtonToggleModule,
     MatDatepickerModule,
     MatDividerModule,
     MatFormFieldModule,
